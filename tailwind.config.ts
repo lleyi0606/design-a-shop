@@ -52,6 +52,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom sustainable theme colors
+				earth: {
+					brown: 'hsl(var(--earth-brown))',
+					beige: 'hsl(var(--warm-beige))',
+					green: 'hsl(var(--sage-green))',
+					wood: 'hsl(var(--natural-wood))',
+					cream: 'hsl(var(--soft-cream))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
