@@ -12,8 +12,8 @@ interface ProductCardProps {
 
 const ProductCard = ({ name, price, image, badge }: ProductCardProps) => {
   return (
-    <Card className="group overflow-hidden bg-card border-border hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]">
-      <div className="relative aspect-[3/4] overflow-hidden">
+    <div className="group cursor-pointer">
+      <div className="relative aspect-[3/4] overflow-hidden rounded-lg mb-4">
         <img 
           src={image} 
           alt={name}
@@ -27,19 +27,24 @@ const ProductCard = ({ name, price, image, badge }: ProductCardProps) => {
             {badge}
           </Badge>
         )}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+          <Button 
+            variant="shop" 
+            className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+          >
+            Add to Cart
+          </Button>
+        </div>
       </div>
-      <CardContent className="p-6">
-        <h3 className="font-serif text-xl text-card-foreground mb-2 group-hover:text-primary transition-colors">
+      <div className="text-center">
+        <h3 className="text-sm text-card-foreground mb-1 group-hover:text-primary transition-colors">
           {name}
         </h3>
-        <p className="text-2xl font-semibold text-primary mb-4">
+        <p className="text-lg font-semibold text-primary">
           ${price.toFixed(2)}
         </p>
-        <Button variant="shop" className="w-full">
-          Add to Cart
-        </Button>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
 
