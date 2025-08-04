@@ -7,7 +7,7 @@ const Hero = () => {
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
 
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
       <img src={heroImage} alt="" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/40"></div>
       {/* Content */}
