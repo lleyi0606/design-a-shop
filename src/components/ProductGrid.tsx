@@ -72,7 +72,7 @@ const ProductGrid = () => {
         </div>
         
         <div ref={carouselRef}>
-          <Carousel opts={{ loop: true }} className="max-w-6xl mx-auto relative">
+          <Carousel opts={{ loop: false }} className="max-w-6xl mx-auto relative">
             <CarouselContent className="-ml-3 md:-ml-4">
               {products.map((product, index) => (
                 <CarouselItem 
