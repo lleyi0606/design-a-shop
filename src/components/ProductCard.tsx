@@ -30,7 +30,7 @@ const ProductCard = ({ name, price, image, badge }: ProductCardProps) => {
           <Button 
             className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 bg-amber-50 text-amber-900 hover:bg-amber-900 hover:text-amber-50 px-6 py-2 rounded-full text-sm font-medium tracking-wide"
           >
-            Add to Cart
+            Enquire
           </Button>
         </div>
       </div>
