@@ -19,7 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'glosa': ['Glosa Display', 'serif'],
+				'glosa': ['Libertinus Serif', 'serif'],
+				'sans': ['Glosa Display', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
