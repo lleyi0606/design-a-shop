@@ -1,3 +1,4 @@
+import { useScrollAnimation, useStaggeredScrollAnimation } from "@/hooks/useScrollAnimation";
 import kitchenImage from "@/assets/collection-kitchen.jpg";
 import bathImage from "@/assets/collection-bath.jpg";
 import onTheGoImage from "@/assets/collection-onthego.jpg";
@@ -21,21 +22,46 @@ const collections = [
 ];
 
 const Collections = () => {
+  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation<HTMLDivElement>();
+  const { containerRef: gridRef, visibleItems } = useStaggeredScrollAnimation<HTMLDivElement>(collections.length);
+
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-neutral-900 mb-6 tracking-tight">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-1000 ease-out ${
+            headerVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <h2 className={`text-4xl md:text-5xl font-light text-neutral-900 mb-6 tracking-tight transition-all duration-1200 delay-200 ease-out ${
+            headerVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-12'
+          }`}>
             Collections
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className={`text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed font-normal transition-all duration-1000 delay-400 ease-out ${
+            headerVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}>
             Discover our curated collections for every area of your life.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {collections.map((collection) => (
-            <div key={collection.id} className="group cursor-pointer rounded-lg overflow-hidden shadow-md">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {collections.map((collection, index) => (
+            <div 
+              key={collection.id} 
+              className={`group cursor-pointer rounded-lg overflow-hidden shadow-md transition-all duration-1000 ease-out ${
+                visibleItems[index] 
+                  ? 'opacity-100 translate-y-0 scale-100' 
+                  : 'opacity-0 translate-y-8 scale-95'
+              }`}
+            >
               <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
                 <img 
                   src={collection.image} 
