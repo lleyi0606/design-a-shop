@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Newsletter = () => {
@@ -32,28 +31,15 @@ const Newsletter = () => {
             exclusive offers, and sustainability tips.
           </p>
           
-          <div className={`flex flex-col sm:flex-row gap-4 max-w-md mx-auto transition-all duration-1000 delay-600 ease-out ${
+          <div className={`transition-all duration-1000 delay-600 ease-out ${
             isVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-8'
           }`}>
-            <Input 
-              type="email" 
-              placeholder="Enter your email address"
-              className="flex-1 border-neutral-300 rounded-none px-4 py-3 text-sm font-normal focus:border-neutral-900 focus:ring-0"
-            />
-            <Button className="bg-neutral-900 hover:bg-neutral-800 text-white px-8 py-3 rounded-none text-sm font-medium tracking-wide transition-colors">
-              Subscribe
+            <Button className="bg-neutral-900 hover:bg-neutral-800 text-white px-12 py-4 rounded-none text-sm font-medium tracking-wide transition-colors">
+              Coming Soon
             </Button>
           </div>
-          
-          <p className={`text-xs text-neutral-500 mt-6 font-light transition-all duration-1000 delay-800 ease-out ${
-            isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-8'
-          }`}>
-            We respect your privacy. Unsubscribe at any time.
-          </p>
         </div>
       </div>
     </section>
